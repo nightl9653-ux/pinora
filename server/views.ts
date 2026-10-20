@@ -5,11 +5,9 @@ import { renderClue } from "./clue";
 import { placeById, type Place } from "./data/places";
 import type { Fact } from "./data/types";
 import { puzzleFor } from "./select";
-import type { StoredGuess, Store } from "./store";
+import { defaultName, type BoardRow, type StoredGuess } from "./store";
 
-export function defaultName(id: string): string {
-  return `p${id.slice(0, 4)}`;
-}
+export { defaultName };
 
 export function cleanName(raw: unknown, fallback: string): string {
   if (typeof raw !== "string") return fallback;
@@ -51,15 +49,19 @@ export function solvedView(fact: Fact, guess: StoredGuess, index: number, locale
   };
 }
 
-export function puzzleView(store: Store, id: string, date: string, locale: Locale) {
+export function puzzleView(
+  name: string,
+  guesses: StoredGuess[],
+  date: string,
+  locale: Locale,
+) {
   const round = puzzleFor(date);
-  const guesses = store.days[date]?.[id]?.guesses ?? [];
   return {
     date,
     today: todayUtc(),
     reset: "00:00 UTC",
     stakes: [...STAKES],
-    name: store.players[id]?.name ?? defaultName(id),
+    name,
     questions: round.map((fact, index) => ({
       index,
       category: fact.category,
@@ -73,14 +75,13 @@ export function puzzleView(store: Store, id: string, date: string, locale: Local
   };
 }
 
-export function boardView(store: Store, date: string, id: string) {
-  const day = store.days[date] ?? {};
+export function boardView(rowsIn: BoardRow[], date: string, id: string) {
   const round = puzzleFor(date);
-  const rows = Object.entries(day)
-    .filter(([, row]) => row.guesses.length === 5)
-    .map(([playerId, row]) => ({
-      id: playerId,
-      name: store.players[playerId]?.name ?? defaultName(playerId),
+  const rows = rowsIn
+    .filter((row) => row.guesses.length === 5)
+    .map((row) => ({
+      id: row.playerId,
+      name: row.name || defaultName(row.playerId),
       total: row.guesses.reduce((sum, guess) => sum + guess.points, 0),
       tiers: row.guesses.map((guess) => tierOf(guess.accuracy)) as Tier[],
       accuracies: row.guesses.map((guess) => guess.accuracy),

@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { todayUtc } from "@/src/game/dates";
 import { playerId, withCookie } from "@/server/identity";
-import { loadStore, updateStore } from "@/server/store";
-import { defaultName, localeOf, playable, puzzleView } from "@/server/views";
+import { ensurePlayer, getGuesses } from "@/server/store";
+import { localeOf, playable, puzzleView } from "@/server/views";
 
 export const runtime = "nodejs";
 
@@ -16,11 +16,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "date" }, { status: 400 });
   }
 
-  await updateStore((store) => {
-    store.players[who.id] ??= { name: defaultName(who.id) };
-  });
-
-  const body = puzzleView(await loadStore(), who.id, day, lang);
+  const [name, guesses] = await Promise.all([ensurePlayer(who.id), getGuesses(day, who.id)]);
+  const body = puzzleView(name, guesses, day, lang);
   const headers = withCookie(new Headers({ "Cache-Control": "no-store" }), who.setCookie);
   return NextResponse.json(body, { headers });
 }

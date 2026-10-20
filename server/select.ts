@@ -70,7 +70,7 @@ function poolFor(
 
 function pickDay(date: string): Fact[] {
   const needs = targetsFor(date);
-  const blocked = recentIds(date, 5);
+  const blocked = recentIds(date, 10);
 
   function attempt(relax: number, uniqueCountry: boolean): Fact[] | null {
     const usedPlaces = new Set<string>();
