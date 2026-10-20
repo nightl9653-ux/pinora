@@ -1,0 +1,37 @@
+{
+  "name": "pinora",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev -p 5173",
+    "build": "next build",
+    "start": "next start -p 5173",
+    "check": "tsx server/selftest.ts",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "@supabase/auth-js": "^2.118.0",
+    "@supabase/functions-js": "^2.118.0",
+    "@supabase/phoenix": "^0.4.5",
+    "@supabase/postgrest-js": "^2.118.0",
+    "@supabase/realtime-js": "^2.118.0",
+    "@supabase/storage-js": "^2.118.0",
+    "@supabase/supabase-js": "^2.75.0",
+    "next": "^15.5.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-globe.gl": "^2.38.0",
+    "three": "^0.186.1",
+    "three-conic-polygon-geometry": "^2.1.3",
+    "three-render-objects": "^1.43.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "oxlint": "^1.88.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.2"
+  }
+}
