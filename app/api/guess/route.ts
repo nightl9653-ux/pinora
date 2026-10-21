@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { accuracyFromKm, distanceKm } from "@/src/game/score";
 import { playerId, withCookie } from "@/server/identity";
-import { ensurePlayer, getGuesses, saveGuesses, type StoredGuess } from "@/server/store";
+import { defaultName, getGuesses, saveGuesses, type StoredGuess } from "@/server/store";
 import { localeOf, playable, pointsFor, placeById, puzzleFor, puzzleView } from "@/server/views";
 
 export const runtime = "nodejs";
@@ -37,7 +37,8 @@ export async function POST(request: Request) {
   }
 
   const round = puzzleFor(date);
-  const [name, prior] = await Promise.all([ensurePlayer(who.id), getGuesses(date, who.id)]);
+  // Skip ensurePlayer — reveal payload does not need the display name.
+  const prior = await getGuesses(date, who.id);
 
   if (index !== prior.length || index >= round.length) {
     return NextResponse.json({ error: "order" }, { status: 409 });
@@ -57,7 +58,7 @@ export async function POST(request: Request) {
   const guesses = [...prior, saved];
   await saveGuesses(date, who.id, guesses);
 
-  const view = puzzleView(name, guesses, date, locale);
+  const view = puzzleView(defaultName(who.id), guesses, date, locale);
   const headers = withCookie(new Headers({ "Cache-Control": "no-store" }), who.setCookie);
   return NextResponse.json(
     { reveal: view.solved[index], total: view.total, finished: view.finished },

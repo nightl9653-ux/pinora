@@ -86,6 +86,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [sheet, setSheet] = useState(false);
   const [pending, setPending] = useState(false);
+  const [guessPin, setGuessPin] = useState<{ lat: number; lng: number } | null>(null);
   const [copied, setCopied] = useState(false);
   const [name, setName] = useState("");
 
@@ -144,12 +145,14 @@ export default function App() {
   }, [route.path, puzzle, copy.error]);
 
   const markers = useMemo<Marker[]>(() => {
-    if (!puzzle) return [];
-    return puzzle.solved.flatMap((item) => [
+    if (!puzzle) return guessPin ? [{ lat: guessPin.lat, lng: guessPin.lng, kind: "you" as const }] : [];
+    const pinned = puzzle.solved.flatMap((item) => [
       { lat: item.guessLat, lng: item.guessLng, kind: "you" as const },
       { lat: item.lat, lng: item.lng, kind: "answer" as const },
     ]);
-  }, [puzzle]);
+    if (guessPin && pending) pinned.push({ lat: guessPin.lat, lng: guessPin.lng, kind: "you" });
+    return pinned;
+  }, [puzzle, guessPin, pending]);
 
   const arcs = useMemo<Arc[]>(
     () =>
@@ -169,6 +172,8 @@ export default function App() {
 
   async function onPick(lat: number, lng: number) {
     if (!puzzle || !question || pending || sheet) return;
+    setError("");
+    setGuessPin({ lat, lng });
     setPending(true);
     try {
       const result = await sendGuess(puzzle.date, question.index, lat, lng, locale);
@@ -185,6 +190,7 @@ export default function App() {
       setError(copy.error);
     } finally {
       setPending(false);
+      setGuessPin(null);
     }
   }
 
@@ -254,7 +260,7 @@ export default function App() {
             <b>{question.stake}</b>
           </div>
           <p>{question.clue}</p>
-          <p className="fine">{copy.zoom}</p>
+          <p className="fine">{pending ? copy.loading : copy.zoom}</p>
         </section>
       )}
 

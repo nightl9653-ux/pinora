@@ -89,7 +89,8 @@ export function GlobeView({ interactive, rotate, markers, arcs, focus, onPick }:
       onPointerMove={(event) => {
         const dx = event.clientX - origin.current.x;
         const dy = event.clientY - origin.current.y;
-        if (dx * dx + dy * dy > 36) moved.current = true;
+        // Touch / trackpad jitter often exceeds 6px; treat only clearer drags as moves.
+        if (dx * dx + dy * dy > 196) moved.current = true;
       }}
     >
       {size.w > 0 && size.h > 0 && (
