@@ -44,9 +44,19 @@ export type Board = {
 };
 
 async function read<T>(url: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(url, { credentials: "same-origin", ...init });
-  if (!response.ok) throw new Error(await response.text());
-  return response.json() as Promise<T>;
+  const control = new AbortController();
+  const timer = setTimeout(() => control.abort(), 20_000);
+  try {
+    const response = await fetch(url, {
+      credentials: "same-origin",
+      ...init,
+      signal: control.signal,
+    });
+    if (!response.ok) throw new Error(await response.text());
+    return response.json() as Promise<T>;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export function fetchPuzzle(lang: string, date?: string): Promise<Puzzle> {
