@@ -120,6 +120,14 @@ export default function App() {
     };
   }, [date, locale, copy.error]);
 
+  // /results only has a panel after finishing; otherwise land on home instead of a blank globe.
+  useEffect(() => {
+    if (!puzzle) return;
+    if (route.path === "/results" && !puzzle.finished) {
+      route.go(date ? `/?d=${date}` : "/");
+    }
+  }, [puzzle, route.path, date]);
+
   useEffect(() => {
     if ((route.path !== "/results" && route.path !== "/board") || !puzzle) return;
     let cancel = false;
