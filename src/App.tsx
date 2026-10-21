@@ -163,8 +163,13 @@ export default function App() {
     if (!puzzle || !question || pending || sheet) return;
     setPending(true);
     try {
-      await sendGuess(puzzle.date, question.index, lat, lng, locale);
-      const next = await fetchPuzzle(locale, puzzle.date);
+      const result = await sendGuess(puzzle.date, question.index, lat, lng, locale);
+      const next = {
+        ...puzzle,
+        solved: [...puzzle.solved, result.reveal],
+        total: result.total,
+        finished: result.finished,
+      };
       setPuzzle(next);
       if (next.finished) rememberStreak(next.today, next.date);
       setSheet(true);
