@@ -11,7 +11,13 @@
 }
 
 * { box-sizing: border-box; }
-html, body, #root { height: 100%; margin: 0; }
+html {
+  height: 100%;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body, #root { height: 100%; margin: 0; }
 button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
 h1, h2, p { margin: 0; }
@@ -80,12 +86,15 @@ h1, h2, .clue-text, .total {
 }
 .clue-dock {
   flex-shrink: 0;
-  width: 100%;
-  margin: 10px 0 0;
-  padding: 10px 16px 12px;
+  width: fit-content;
+  max-width: min(440px, calc(100% - 28px));
+  margin: 12px auto 0;
+  padding: 14px 20px 12px;
   background: var(--panel);
-  border-block: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 22px;
   backdrop-filter: blur(16px);
+  text-align: center;
 }
 .clue-toggle {
   display: flex;
@@ -95,7 +104,7 @@ h1, h2, .clue-text, .total {
   gap: 0.35rem 0.45rem;
   width: 100%;
   margin: 0;
-  padding: 4px 0;
+  padding: 0;
   background: transparent;
   border: 0;
   color: inherit;
@@ -109,7 +118,14 @@ h1, h2, .clue-text, .total {
   font-size: 0.75rem;
   margin-inline-start: 0.2rem;
 }
-.clue-body { margin-top: 8px; }
+.clue-body {
+  margin-top: 8px;
+  text-align: center;
+}
+.clue-body .clue-text,
+.clue-body .fine {
+  text-align: center;
+}
 .clue-body .clue-text {
   font-family: Fraunces, Georgia, serif;
   font-size: 1.45rem;
@@ -181,6 +197,21 @@ ol { padding-left: 1.1rem; }
 li + li { margin-top: 8px; }
 
 @media (max-width: 640px) {
+  .clue-dock {
+    width: 100%;
+    max-width: none;
+    margin: 10px 0 0;
+    padding: 10px 16px 12px;
+    border-radius: 0;
+    border: 0;
+    border-block: 1px solid var(--line);
+  }
+  .clue-toggle { font-size: 0.88rem; }
+  .clue-body .clue-text { font-size: 1.12rem; line-height: 1.35; }
+  .clue-body .fine,
+  .fine { font-size: 0.78rem; }
+  .brand { font-size: 1.05rem; }
   .reveal { margin-top: 34vh; }
+  .reveal h2 { font-size: 1.2rem; }
   .score, .total { font-size: 3.4rem; }
 }
