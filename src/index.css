@@ -86,8 +86,7 @@ h1, h2, .clue-text, .total {
 }
 .clue-dock {
   flex-shrink: 0;
-  width: fit-content;
-  max-width: min(440px, calc(100% - 28px));
+  width: min(440px, calc(100% - 28px));
   margin: 12px auto 0;
   padding: 14px 20px 12px;
   background: var(--panel);
