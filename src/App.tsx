@@ -245,6 +245,7 @@ export default function App() {
             <span className="chevron" aria-hidden>
               {clueOpen ? "▴" : "▾"}
             </span>
+            {!clueOpen && <span className="clue-hint">{copy.openClue}</span>}
           </button>
           {clueOpen && (
             <div className="clue-body">

@@ -17,6 +17,7 @@ export type Copy = {
   back: string;
   reset: string;
   zoom: string;
+  openClue: string;
   next: string;
   results: string;
   share: string;
@@ -53,6 +54,7 @@ const EN: Copy = {
   back: "Back",
   reset: "New round at 00:00 UTC",
   zoom: "Drag to turn. Pinch to zoom. One tap is your guess.",
+  openClue: "Tap to see the clue",
   next: "Next",
   results: "Results",
   share: "Copy score",
@@ -102,6 +104,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "返回",
     reset: "每天 UTC 午夜换题",
     zoom: "拖动转动，双指缩放。点一下就是答案。",
+    openClue: "点开看题",
     next: "下一题",
     results: "成绩",
     share: "复制成绩",
@@ -143,6 +146,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "返回",
     reset: "每天 UTC 午夜換題",
     zoom: "拖動轉動，雙指縮放。點一下就是答案。",
+    openClue: "點開看題",
     next: "下一題",
     results: "成績",
     share: "複製成績",
@@ -184,6 +188,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "Volver",
     reset: "Ronda nueva a las 00:00 UTC",
     zoom: "Arrastra para girar. Pellizca para ampliar. Un toque es la respuesta.",
+    openClue: "Toca para ver la pista",
     next: "Siguiente",
     results: "Resultado",
     share: "Copiar resultado",
@@ -218,6 +223,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "Voltar",
     reset: "Rodada nova à 00:00 UTC",
     zoom: "Arraste para girar. Belisque para ampliar. Um toque é o palpite.",
+    openClue: "Toque para ver a dica",
     next: "Próxima",
     results: "Placar",
     share: "Copiar placar",
@@ -252,6 +258,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "Retour",
     reset: "Nouvelle manche à 00:00 UTC",
     zoom: "Glisser pour tourner. Pincer pour zoomer. Un tap est la réponse.",
+    openClue: "Touchez pour voir l'indice",
     next: "Suivant",
     results: "Score",
     share: "Copier le score",
@@ -286,6 +293,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "Zurück",
     reset: "Neue Runde um 00:00 UTC",
     zoom: "Ziehen dreht. Mit zwei Fingern zoomen. Ein Tippen ist die Antwort.",
+    openClue: "Tippen für den Hinweis",
     next: "Weiter",
     results: "Ergebnis",
     share: "Ergebnis kopieren",
@@ -320,6 +328,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "戻る",
     reset: "UTC 0時に新しい問題",
     zoom: "ドラッグで回す。ピンチで拡大。タップが回答。",
+    openClue: "タップで問題を見る",
     next: "次へ",
     results: "結果",
     share: "結果をコピー",
@@ -354,6 +363,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     back: "뒤로",
     reset: "UTC 자정에 새 문제",
     zoom: "끌어 돌리고, 두 손가락으로 확대. 한 번 누르면 답.",
+    openClue: "눌러서 문제 보기",
     next: "다음",
     results: "결과",
     share: "점수 복사",
