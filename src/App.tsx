@@ -89,6 +89,7 @@ export default function App() {
   const [guessPin, setGuessPin] = useState<{ lat: number; lng: number } | null>(null);
   const [copied, setCopied] = useState(false);
   const [name, setName] = useState("");
+  const [clueOpen, setClueOpen] = useState(false);
 
   const date = route.date;
 
@@ -101,6 +102,7 @@ export default function App() {
   useEffect(() => {
     setSheet(false);
     setCopied(false);
+    setClueOpen(false);
   }, [date, route.path]);
 
   useEffect(() => {
@@ -169,6 +171,11 @@ export default function App() {
   const focus = sheet && latest ? { lat: latest.lat, lng: latest.lng } : null;
   const playing = route.path === "/play" && puzzle !== null && !puzzle.finished;
   const question = puzzle?.questions[puzzle.solved.length];
+  const showClue = Boolean(playing && question && !sheet);
+
+  useEffect(() => {
+    setClueOpen(false);
+  }, [question?.index, puzzle?.date]);
 
   async function onPick(lat: number, lng: number) {
     if (!puzzle || !question || pending || sheet) return;
@@ -198,15 +205,7 @@ export default function App() {
   const homeFinished = puzzle?.finished && puzzle.date === puzzle.today;
 
   return (
-    <div className="app">
-      <GlobeView
-        interactive={playing && !sheet && !pending}
-        rotate={route.path === "/"}
-        markers={route.path === "/play" || route.path === "/results" ? markers : []}
-        arcs={route.path === "/play" || route.path === "/results" ? arcs : []}
-        focus={route.path === "/play" ? focus : null}
-        onPick={(lat, lng) => void onPick(lat, lng)}
-      />
+    <div className={showClue ? "app play-split" : "app"}>
       <header className="top">
         <button className="brand" onClick={() => route.go("/")}>
           Pinora
@@ -223,6 +222,47 @@ export default function App() {
           <button onClick={() => window.location.reload()}>{copy.retry}</button>
         </div>
       )}
+
+      {showClue && question && (
+        <section className={clueOpen ? "clue-dock is-open" : "clue-dock"}>
+          <button
+            type="button"
+            className="clue-toggle"
+            aria-expanded={clueOpen}
+            onClick={() => setClueOpen((open) => !open)}
+          >
+            <span>{copy.categories[question.category]}</span>
+            <span className="dot" aria-hidden>
+              ·
+            </span>
+            <span>{fill("{n} / 5", { n: question.index + 1 })}</span>
+            <span className="dot" aria-hidden>
+              ·
+            </span>
+            <b>{question.stake}</b>
+            <span className="chevron" aria-hidden>
+              {clueOpen ? "▴" : "▾"}
+            </span>
+          </button>
+          {clueOpen && (
+            <div className="clue-body">
+              <p className="clue-text">{question.clue}</p>
+              <p className="fine">{pending ? copy.loading : copy.zoom}</p>
+            </div>
+          )}
+        </section>
+      )}
+
+      <div className="stage">
+        <GlobeView
+          interactive={playing && !sheet && !pending}
+          rotate={route.path === "/"}
+          markers={route.path === "/play" || route.path === "/results" ? markers : []}
+          arcs={route.path === "/play" || route.path === "/results" ? arcs : []}
+          focus={route.path === "/play" ? focus : null}
+          onPick={(lat, lng) => void onPick(lat, lng)}
+        />
+      </div>
 
       {route.path === "/" && (
         <section className="panel home">
@@ -249,18 +289,6 @@ export default function App() {
           <button className="primary" onClick={() => route.go("/play")}>
             {copy.play}
           </button>
-        </section>
-      )}
-
-      {route.path === "/play" && puzzle && question && !sheet && (
-        <section className="clue">
-          <div className="meta">
-            <span>{copy.categories[question.category]}</span>
-            <span>{fill("{n} / 5", { n: question.index + 1 })}</span>
-            <b>{question.stake}</b>
-          </div>
-          <p>{question.clue}</p>
-          <p className="fine">{pending ? copy.loading : copy.zoom}</p>
         </section>
       )}
 
