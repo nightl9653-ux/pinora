@@ -172,6 +172,8 @@ export default function App() {
   const playing = route.path === "/play" && puzzle !== null && !puzzle.finished;
   const question = puzzle?.questions[puzzle.solved.length];
   const showClue = Boolean(playing && question && !sheet);
+  const showReveal = Boolean(route.path === "/play" && puzzle && sheet && latest);
+  const playSplit = showClue || showReveal;
 
   useEffect(() => {
     setClueOpen(false);
@@ -205,7 +207,7 @@ export default function App() {
   const homeFinished = puzzle?.finished && puzzle.date === puzzle.today;
 
   return (
-    <div className={showClue ? "app play-split" : "app"}>
+    <div className={playSplit ? "app play-split" : "app"}>
       <header className="top">
         <button className="brand" onClick={() => route.go("/")}>
           Pinora
@@ -253,6 +255,30 @@ export default function App() {
         </section>
       )}
 
+      {showReveal && puzzle && latest && (
+        <section className="panel reveal">
+          <div className={`score tier-${latest.tier}`}>{latest.points}</div>
+          <p className="meta">
+            <span>{copy.tiers[latest.tier]}</span>
+            <span>{latest.distanceKm} km</span>
+            <span>
+              {latest.points} / {puzzle.stakes[latest.index]}
+            </span>
+          </p>
+          <h2>{latest.placeName}</h2>
+          <p>{latest.story}</p>
+          {puzzle.finished ? (
+            <button className="primary" onClick={() => route.go(pathWith("/results", date))}>
+              {copy.results}
+            </button>
+          ) : (
+            <button className="primary" onClick={() => setSheet(false)}>
+              {copy.next}
+            </button>
+          )}
+        </section>
+      )}
+
       <div className="stage">
         <GlobeView
           interactive={playing && !sheet && !pending}
@@ -289,30 +315,6 @@ export default function App() {
           <button className="primary" onClick={() => route.go("/play")}>
             {copy.play}
           </button>
-        </section>
-      )}
-
-      {route.path === "/play" && puzzle && sheet && latest && (
-        <section className="panel reveal">
-          <div className={`score tier-${latest.tier}`}>{latest.points}</div>
-          <p className="meta">
-            <span>{copy.tiers[latest.tier]}</span>
-            <span>{latest.distanceKm} km</span>
-            <span>
-              {latest.points} / {puzzle.stakes[latest.index]}
-            </span>
-          </p>
-          <h2>{latest.placeName}</h2>
-          <p>{latest.story}</p>
-          {puzzle.finished ? (
-            <button className="primary" onClick={() => route.go(pathWith("/results", date))}>
-              {copy.results}
-            </button>
-          ) : (
-            <button className="primary" onClick={() => setSheet(false)}>
-              {copy.next}
-            </button>
-          )}
         </section>
       )}
 
