@@ -36,6 +36,7 @@ export type Copy = {
   retry: string;
   nasa: string;
   howTitle: string;
+  topic: string;
   rules: string[];
   categories: Record<Category, string>;
   tiers: Record<Tier, string>;
@@ -47,7 +48,7 @@ export type Copy = {
 
 const EN: Copy = {
   language: "Language",
-  tagline: "Five places. One minute. The same round for the whole world.",
+  tagline: "Five folk practices. One minute. The same round for the whole world.",
   play: "Play today",
   again: "See today's score",
   how: "How it works",
@@ -73,14 +74,15 @@ const EN: Copy = {
   retry: "Try again",
   nasa: "Earth image: NASA",
   howTitle: "How Pinora works",
+  topic: "Spell",
   rules: [
     "Five questions, the same ones everywhere, until 00:00 UTC.",
-    "Tap the globe once. Closer scores more. The five questions are worth 100, 100, 200, 300 and 300.",
+    "Tap the globe once. Inside the region is a full score; past the edge, the score falls with distance. The five questions are worth 100, 100, 200, 300 and 300.",
     "Green is 90 or better, yellow is 50–89, red is 1–49, black is the far side of the Earth.",
     "Share the colors, not the answers.",
     "Only today's round extends a streak. Replaying an old day does not.",
   ],
-  categories: { food: "Food", film: "Film", music: "Music", city: "Cities", history: "History" },
+  categories: { food: "Spell", film: "Spell", music: "Spell", city: "Spell", history: "Spell" },
   tiers: { perfect: "Perfect", great: "Great", close: "Close", far: "Far", miss: "Other side" },
   prev: "Previous day",
   nextDay: "Next day",
@@ -97,7 +99,7 @@ type Pack = Partial<Omit<Copy, "categories" | "tiers" | "rules">> & {
 const PACKS: Partial<Record<Locale, Pack>> = {
   "zh-Hans": {
     language: "语言",
-    tagline: "五座地点，一分钟。全世界同一套题。",
+    tagline: "五种法术，一分钟。全世界同一套题。",
     play: "玩今天",
     again: "看今天的成绩",
     how: "怎么玩",
@@ -123,14 +125,15 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     retry: "再试一次",
     nasa: "地球图像：NASA",
     howTitle: "Pinora 怎么玩",
+    topic: "法术",
     rules: [
       "五道题，全世界同一套，在 UTC 午夜换新的。",
-      "在地球上点一下。越近分越高。五题分值是 100、100、200、300 和 300。",
+      "在地球上点一下。点中那一带是满分，出了边按距离扣分。五题分值是 100、100、200、300 和 300。",
       "90 分及以上是绿，50–89 是黄，1–49 是红，0 是地球另一面。",
       "分享颜色，不分享答案。",
       "只有今天这一局加连胜。补玩旧的一天不加。",
     ],
-    categories: { food: "美食", film: "影视", music: "音乐", city: "城市", history: "历史" },
+    categories: { food: "法术", film: "法术", music: "法术", city: "法术", history: "法术" },
     tiers: { perfect: "正中", great: "很好", close: "接近", far: "偏了", miss: "地球另一面" },
     prev: "前一天",
     nextDay: "后一天",
@@ -139,7 +142,7 @@ const PACKS: Partial<Record<Locale, Pack>> = {
   },
   "zh-Hant": {
     language: "語言",
-    tagline: "五座地點，一分鐘。全世界同一套題。",
+    tagline: "五種法術，一分鐘。全世界同一套題。",
     play: "玩今天",
     again: "看今天的成績",
     how: "怎麼玩",
@@ -165,14 +168,15 @@ const PACKS: Partial<Record<Locale, Pack>> = {
     retry: "再試一次",
     nasa: "地球圖像：NASA",
     howTitle: "Pinora 怎麼玩",
+    topic: "法術",
     rules: [
       "五道題，全世界同一套，在 UTC 午夜換新的。",
-      "在地球上點一下。越近分越高。五題分值是 100、100、200、300 和 300。",
+      "在地球上點一下。點中那一帶是滿分，出了邊按距離扣分。五題分值是 100、100、200、300 和 300。",
       "90 分及以上是綠，50–89 是黃，1–49 是紅，0 是地球另一面。",
       "分享顏色，不分享答案。",
       "只有今天這一局加連勝。補玩舊的一天不加。",
     ],
-    categories: { food: "美食", film: "影視", music: "音樂", city: "城市", history: "歷史" },
+    categories: { food: "法術", film: "法術", music: "法術", city: "法術", history: "法術" },
     tiers: { perfect: "正中", great: "很好", close: "接近", far: "偏了", miss: "地球另一側" },
     prev: "前一天",
     nextDay: "後一天",

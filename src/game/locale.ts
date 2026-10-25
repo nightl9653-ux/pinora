@@ -117,7 +117,7 @@ export type L10n = { en: string } & Partial<Record<Locale, string>>;
 
 export const CATEGORIES = ["food", "film", "music", "city", "history"] as const;
 export type Category = (typeof CATEGORIES)[number];
-export type Kind = "food" | "film" | "music" | "nickname" | "landmark" | "history";
+export type Kind = "food" | "film" | "music" | "nickname" | "landmark" | "history" | "spell";
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 export type Continent = "AF" | "AS" | "EU" | "NA" | "OC" | "SA";
 

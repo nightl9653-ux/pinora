@@ -36,6 +36,13 @@ export function distanceKm(
   return 2 * r * Math.asin(Math.min(1, Math.sqrt(a)));
 }
 
+/** Distance past the edge of a region. Inside the radius counts as 0 km. */
+export function scoredKm(rawKm: number, radiusKm = 0): number {
+  const radius = Number.isFinite(radiusKm) && radiusKm > 0 ? radiusKm : 0;
+  const past = rawKm - radius;
+  return past > 0 ? past : 0;
+}
+
 export function accuracyFromKm(km: number): number {
   if (!Number.isFinite(km) || km <= 30) return km < 0 || !Number.isFinite(km) ? 0 : 100;
   if (km >= 19000) return 0;

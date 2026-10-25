@@ -5,6 +5,30 @@ function pack(en: string, extra: Partial<Record<Locale, string>> = {}): L10n {
 }
 
 const TEMPLATES: Record<Kind, L10n> = {
+  spell: pack("Which region does {subject} come from?", {
+    "zh-Hans": "{subject}出自哪一带？",
+    "zh-Hant": "{subject}出自哪一帶？",
+    es: "¿De qué región sale {subject}?",
+    "pt-BR": "De que região vem {subject}?",
+    "pt-PT": "De que região vem {subject}?",
+    fr: "De quelle région vient {subject} ?",
+    de: "Aus welcher Gegend stammt {subject}?",
+    ja: "{subject}はどのあたりの風習？",
+    ko: "{subject}은 어느 지역의 풍습일까?",
+    it: "Da quale zona arriva {subject}?",
+    ru: "Из какого края обычай {subject}?",
+    ar: "من أي منطقة تأتي عادة {subject}؟",
+    hi: "{subject} किस इलाके की प्रथा है?",
+    id: "Dari daerah mana {subject} berasal?",
+    ms: "Dari daerah manakah {subject} berasal?",
+    tr: "{subject} hangi yörenin adeti?",
+    vi: "{subject} thuộc vùng nào?",
+    th: "{subject} มาจากแถบไหน?",
+    pl: "Z jakiego regionu pochodzi {subject}?",
+    nl: "Uit welke streek komt {subject}?",
+    uk: "З якого краю походить {subject}?",
+    he: "מאיזה אזור בא המנהג {subject}?",
+  }),
   food: pack("Where was {subject} created?", {
     "zh-Hans": "{subject}出自哪座城市？",
     "zh-Hant": "{subject}出自哪座城市？",

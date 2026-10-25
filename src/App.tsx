@@ -233,7 +233,7 @@ export default function App() {
             aria-expanded={clueOpen}
             onClick={() => setClueOpen((open) => !open)}
           >
-            <span>{copy.categories[question.category]}</span>
+            <span>{copy.topic}</span>
             <span className="dot" aria-hidden>
               ·
             </span>
@@ -451,7 +451,7 @@ function Results({
         <p>
           {fill(copy.hardest, {
             n: board.hardest.index + 1,
-            category: copy.categories[board.hardest.category],
+            category: copy.topic,
             score: board.hardest.average,
           })}
         </p>

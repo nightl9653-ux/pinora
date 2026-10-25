@@ -1,17 +1,7 @@
-import { cityFacts } from "./city";
-import { filmFacts } from "./film";
-import { foodFacts } from "./food";
-import { historyFacts } from "./history";
-import { musicFacts } from "./music";
 import type { Fact } from "./types";
+import { spellFacts } from "./spell";
 
-export const facts: Fact[] = [
-  ...foodFacts,
-  ...filmFacts,
-  ...musicFacts,
-  ...cityFacts,
-  ...historyFacts,
-];
+export const facts: Fact[] = [...spellFacts];
 
 const byId = new Map(facts.map((fact) => [fact.id, fact]));
 

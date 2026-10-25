@@ -1,7 +1,7 @@
 import { addDays, EPOCH } from "../src/game/dates";
 import { CATEGORIES } from "../src/game/locale";
 import { STAKES } from "../src/game/tier";
-import { accuracyFromKm, distanceKm } from "../src/game/score";
+import { accuracyFromKm, distanceKm, scoredKm } from "../src/game/score";
 import { facts } from "./data/facts";
 import { placeById } from "./data/places";
 import { leakedLocales } from "./leak";
@@ -26,6 +26,12 @@ for (const km of samples) {
   previous = score;
 }
 if (accuracyFromKm(0) !== 100 || accuracyFromKm(30) !== 100) throw new Error("close tap should be perfect");
+if (scoredKm(120, 200) !== 0) throw new Error("inside a region should show 0 km");
+if (scoredKm(230, 200) !== 30) throw new Error("past the edge should keep the surplus");
+for (const fact of facts) {
+  const place = placeById(fact.placeId);
+  if (!place.radiusKm || place.radiusKm < 60) throw new Error(`${fact.id} needs a region radius`);
+}
 if (accuracyFromKm(20000) !== 0) throw new Error("antipode should be zero");
 const romeNaples = distanceKm(41.9028, 12.4964, 40.8518, 14.2681);
 const romeScore = accuracyFromKm(romeNaples);

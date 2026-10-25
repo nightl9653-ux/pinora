@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { accuracyFromKm, distanceKm } from "@/src/game/score";
+import { accuracyFromKm, distanceKm, scoredKm } from "@/src/game/score";
 import { playerId, withCookie } from "@/server/identity";
 import { defaultName, getGuesses, saveGuesses, type StoredGuess } from "@/server/store";
 import { localeOf, playable, pointsFor, placeById, puzzleFor, puzzleView } from "@/server/views";
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
 
   const fact = round[index];
   const place = placeById(fact.placeId);
-  const km = distanceKm(lat, lng, place.lat, place.lng);
+  const km = scoredKm(distanceKm(lat, lng, place.lat, place.lng), place.radiusKm ?? 0);
   const accuracy = accuracyFromKm(km);
   const saved: StoredGuess = {
     lat,

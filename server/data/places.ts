@@ -1,4 +1,5 @@
 import { L, type Continent, type L10n } from "../../src/game/locale";
+import { spellPlaces } from "./spell";
 
 export type Place = {
   id: string;
@@ -9,6 +10,8 @@ export type Place = {
   names: L10n;
   reveal?: L10n;
   aliases?: string[];
+  /** Taps inside this radius score as a perfect hit and show 0 km. */
+  radiusKm?: number;
 };
 
 export const places: Place[] = [
@@ -1047,7 +1050,7 @@ export const places: Place[] = [
   },
 ];
 
-const byId = new Map(places.map((place) => [place.id, place]));
+const byId = new Map([...places, ...spellPlaces].map((place) => [place.id, place]));
 
 export function placeById(id: string): Place {
   const place = byId.get(id);

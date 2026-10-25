@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pinora · Dayfive",
-  description: "Five places. One minute. The same round for the whole world.",
+  description: "Five folk practices. One minute. The same round for the whole world.",
   icons: { icon: "/favicon.svg" },
 };
 
