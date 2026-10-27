@@ -321,9 +321,9 @@ export const spellFacts: Fact[] = [
     "spell-salvador",
     ["a white cloth over the drum", "鼓面上的白布", "鼓面上的白布"],
     [
-      "A drummer covered the drum with a white cloth and said the rhythm would not follow anyone home after the music stopped. The student used the cloth to wipe his sweat. After the crowd left, cups along the street clicked in the same beat. The cloth was back on the drum, and one corner was wet.",
-      "鼓手在鼓面盖了一块白布，说散场后节奏不会跟到别人家里。学徒把布拿去擦汗。散场后整条街的杯子跟着同一个拍子响，白布却自己回到鼓上，湿了一角。",
-      "鼓手在鼓面蓋了一塊白布，說散場後節奏不會跟到別人家裡。學徒把布拿去擦汗。散場後整條街的杯子跟著同一個拍子響，白布卻自己回到鼓上，濕了一角。",
+      "A drummer covered the drum with a white cloth and said the rhythm would not follow anyone home after the music stopped. The student used the cloth to wipe his sweat. After the crowd left, cups along the street clicked in the same beat. The cloth was back on the drum, one corner wet, and the student's hands kept tapping that beat until morning.",
+      "鼓手在鼓面盖了一块白布，说散场后节奏不会跟到别人家里。学徒把布拿去擦汗。散场后整条街的杯子跟着同一个拍子响；白布自己回到鼓上，湿了一角，学徒的手却一直敲到天亮。",
+      "鼓手在鼓面蓋了一塊白布，說散場後節奏不會跟到別人家裡。學徒把布拿去擦汗。散場後整條街的杯子跟著同一個拍子響；白布自己回到鼓上，濕了一角，學徒的手卻一直敲到天亮。",
     ],
   ),
   tale(
@@ -417,9 +417,9 @@ export const spellFacts: Fact[] = [
     "spell-varanasi",
     ["a small lamp set on the water", "放上水面的一盏灯", "放上水面的一盞燈"],
     [
-      "A woman set a small lamp on the water and said the words she had not finished would travel away with it. Her son was afraid the lamp would die, so he fished it out and set it on the step. The lamp stayed lit. The water under the steps did not move downstream all night, and the words stayed on the wick.",
-      "女人把一盏小灯放上水面，说没说完的话会随灯走远。她儿子怕灯灭了，把它捞回来搁在台阶上。灯还亮着，台阶下的水却一夜不往下游走，话也停在灯芯上。",
-      "女人把一盞小燈放上水面，說沒說完的話會隨燈走遠。她兒子怕燈滅了，把它撈回來擱在臺階上。燈還亮著，臺階下的水卻一夜不往下游走，話也停在燈芯上。",
+      "A woman set a small lamp on the water and said the words she had not finished would float away with it. Her son was afraid the lamp would die, so he fished it out and set it on the step. The lamp stayed lit. All night the water under the steps would not move downstream, and every time she tried to finish the sentence, her throat closed.",
+      "女人把一盏小灯放上水面，说没说完的话会随灯漂走。她儿子怕灯灭，捞回来搁在台阶上。灯还亮着，台阶下的水却一夜不往下游流；她一想把那句话说完，嗓子就发紧，怎么也说不出口。",
+      "女人把一盞小燈放上水面，說沒說完的話會隨燈漂走。她兒子怕燈滅，撈回來擱在臺階上。燈還亮著，臺階下的水卻一夜不往下游流；她一想把那句話說完，嗓子就發緊，怎麼也說不出口。",
     ],
   ),
   tale(
@@ -453,9 +453,9 @@ export const spellFacts: Fact[] = [
     "spell-krakow",
     ["half a loaf left on the windowsill", "窗台上的半块面包", "窗臺上的半塊麵包"],
     [
-      "A baker left half a loaf on the windowsill and said anyone who knocked at night would eat that one bite and leave. The apprentice put the bread in the cupboard. In the night the cupboard stood open. One bite was gone from the loaf, and a handprint with nobody attached to it was on the sill.",
-      "面包师把半块面包留在窗台，说夜里敲门的人只吃这一口就走。学徒把面包收进了柜子。夜里柜子自己开着，面包少了一口，窗台上留着一个没人的手印。",
-      "麵包師把半塊麵包留在窗臺，說夜裡敲門的人只吃這一口就走。學徒把麵包收進了櫃子。夜裡櫃子自己開著，麵包少了一口，窗臺上留著一個沒人的手印。",
+      "A baker left half a loaf on the windowsill and said anyone who knocked at night would take one bite and leave. The apprentice put the bread in the cupboard. In the night the cupboard stood open. One bite was gone from the loaf, and a wet handprint sat on the sill with nobody attached to it.",
+      "面包师把半块面包留在窗台，说夜里敲门的人只吃这一口就走。学徒把面包收进了柜子。夜里柜子自己开着，面包少了一口；窗台上留着一个湿手印，却看不见人。",
+      "麵包師把半塊麵包留在窗臺，說夜裡敲門的人只吃這一口就走。學徒把麵包收進了櫃子。夜裡櫃子自己開著，麵包少了一口；窗臺上留著一個濕手印，卻看不見人。",
     ],
   ),
   tale(
