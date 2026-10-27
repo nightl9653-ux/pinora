@@ -1141,9 +1141,9 @@ export const spellExtraFacts: Fact[] = [
     "spell-prague",
     ["a smooth stone under the bridge rail", "桥栏下的光滑石子", "橋欄下的光滑石子"],
     [
-      "A student kept a smooth stone under the bridge rail and said exam fears would drop into the river. A tourist threw it in for a wish. That night the student's fear sat on the tourist's pillow. The stone was back under the rail, dry, and the tourist's wish coin floated without sinking.",
-      "学生在桥栏下藏了一颗光滑石子，说对考试的恐惧会跟着掉进河里。游客许了个愿，把它扔了下去。夜里，那份恐惧坐到了游客枕边；石子又干爽地回到栏下，许愿的硬币浮在水面，沉不下去。",
-      "學生在橋欄下藏了一顆光滑石子，說對考試的恐懼會跟著掉進河裡。遊客許了個願，把它扔了下去。夜裡，那份恐懼坐到了遊客枕邊；石子又乾爽地回到欄下，許願的硬幣浮在水面，沉不下去。",
+      "A student kept a smooth stone under the bridge rail and said his fear of exams would fall into the river with it. A tourist made a wish and threw the stone in. That night the tourist woke again and again, heart racing as if an exam were waiting at dawn. The stone was back under the rail, dry, and the tourist's wish coin floated without sinking.",
+      "学生在桥栏下藏了一颗光滑石子，说对考试的害怕会跟着掉进河里。游客许了个愿，把它扔了下去。夜里游客一次次惊醒，心怦怦跳，像明天真要去考试；石子却干爽地回到栏下，许愿的硬币浮在水面，沉不下去。",
+      "學生在橋欄下藏了一顆光滑石子，說對考試的害怕會跟著掉進河裡。遊客許了個願，把它扔了下去。夜裡遊客一次次驚醒，心怦怦跳，像明天真要去考試；石子卻乾爽地回到欄下，許願的硬幣浮在水面，沉不下去。",
     ],
   ),
   tale(
