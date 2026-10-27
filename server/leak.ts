@@ -31,7 +31,10 @@ export function forbidden(place: Place): string[] {
 
 export function clueMentionsPlace(fact: Fact, place: Place, locale: Locale): string | null {
   if (!fact.conceal) return null;
-  const clue = renderClue(fact.kind, locale, t(fact.subject, locale));
+  const clue =
+    fact.kind === "spell"
+      ? t(fact.story, locale)
+      : renderClue(fact.kind, locale, t(fact.subject, locale));
   for (const name of forbidden(place)) {
     if (mentions(clue, name)) return name;
   }

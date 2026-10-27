@@ -8,6 +8,7 @@ export type Solved = {
   distanceKm: number;
   tier: Tier;
   placeName: string;
+  subject: string;
   story: string;
   lat: number;
   lng: number;

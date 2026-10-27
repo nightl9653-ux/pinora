@@ -267,7 +267,8 @@ export default function App() {
             </span>
           </p>
           <h2>{latest.placeName}</h2>
-          <p>{latest.story}</p>
+          <p className="charm">{latest.subject}</p>
+          <p className="story">{latest.story}</p>
           {puzzle.finished ? (
             <button className="primary" onClick={() => route.go(pathWith("/results", date))}>
               {copy.results}

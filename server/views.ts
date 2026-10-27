@@ -27,9 +27,25 @@ export function localeOf(value: string | null): Locale {
 function placeLabel(place: Place, locale: Locale): string {
   const bag = place.reveal ?? place.names;
   const local = t(bag, locale);
+  if (
+    locale === "zh-Hans" ||
+    locale === "zh-Hant" ||
+    locale === "ja" ||
+    locale === "ko" ||
+    locale === "en"
+  ) {
+    return local;
+  }
   const english = bag.en;
-  if (locale === "en" || local.toLowerCase() === english.toLowerCase()) return local;
+  if (local.toLowerCase() === english.toLowerCase()) return local;
   return `${local} · ${english}`;
+}
+
+function clueFor(fact: Fact, locale: Locale): string {
+  if (fact.kind === "spell") {
+    return t(fact.story, locale);
+  }
+  return renderClue(fact.kind, locale, t(fact.subject, locale));
 }
 
 export function solvedView(fact: Fact, guess: StoredGuess, index: number, locale: Locale) {
@@ -41,6 +57,7 @@ export function solvedView(fact: Fact, guess: StoredGuess, index: number, locale
     distanceKm: Math.round(guess.distanceKm),
     tier: tierOf(guess.accuracy),
     placeName: placeLabel(place, locale),
+    subject: t(fact.subject, locale),
     story: t(fact.story, locale),
     lat: place.lat,
     lng: place.lng,
@@ -65,7 +82,7 @@ export function puzzleView(
     questions: round.map((fact, index) => ({
       index,
       category: fact.category,
-      clue: renderClue(fact.kind, locale, t(fact.subject, locale)),
+      clue: clueFor(fact, locale),
       stake: STAKES[index],
       difficulty: fact.difficulty,
     })),
