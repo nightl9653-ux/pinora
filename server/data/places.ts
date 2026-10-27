@@ -1,5 +1,6 @@
 import { L, type Continent, type L10n } from "../../src/game/locale";
 import { spellPlaces } from "./spell";
+import { spellExtraPlaces } from "./spellExtra";
 
 export type Place = {
   id: string;
@@ -1050,7 +1051,7 @@ export const places: Place[] = [
   },
 ];
 
-const byId = new Map([...places, ...spellPlaces].map((place) => [place.id, place]));
+const byId = new Map([...places, ...spellPlaces, ...spellExtraPlaces].map((place) => [place.id, place]));
 
 export function placeById(id: string): Place {
   const place = byId.get(id);
