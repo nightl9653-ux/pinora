@@ -1345,9 +1345,9 @@ export const spellExtraFacts: Fact[] = [
     "spell-apia",
     ["a coconut shell under the cooking stones", "灶石下的椰壳", "灶石下的椰殼"],
     [
-      "A cook set a coconut shell under the cooking stones and said shared meals would stretch for late arrivals. A child used the shell as a toy boat. At supper the pot ran short. The shell was back under the stones, and the toy boat floated in a dry bowl until the child returned a portion.",
-      "厨子在灶石下垫了椰壳，说分享的饭会够晚到的人。孩子拿去当小船玩。晚饭锅见了底；椰壳又回到灶石下，小船浮在干碗里，直到孩子把一份饭还回去。",
-      "廚子在灶石下墊了椰殼，說分享的飯會夠晚到的人。孩子拿去當小船玩。晚飯鍋見了底；椰殼又回到灶石下，小船浮在乾碗裡，直到孩子把一份飯還回去。",
+      "A cook set a coconut shell under the cooking stones and said shared meals would stretch for late arrivals. A child took the shell to play boat in a bowl. At supper the pot ran short. The shell was only back under the stones; the child's bowl was empty and dry, and nothing was left in his hands until he returned a portion of food.",
+      "厨子在灶石下垫了椰壳，说分享的饭会够晚到的人。孩子把椰壳拿去碗里当小船玩。晚饭锅见了底；椰壳只回到灶石下，孩子手里空了，碗也是干的，直到他把一份饭还回去。",
+      "廚子在灶石下墊了椰殼，說分享的飯會夠晚到的人。孩子把椰殼拿去碗裡當小船玩。晚飯鍋見了底；椰殼只回到灶石下，孩子手裡空了，碗也是乾的，直到他把一份飯還回去。",
     ],
   ),
 ];
