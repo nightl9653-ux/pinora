@@ -62,7 +62,15 @@ h1, h2, .clue-text, .total {
   background: transparent;
   border: 0;
 }
+.top-brand { display: flex; align-items: baseline; gap: 0.85rem; }
 .brand { font-size: 1.15rem; letter-spacing: 0.04em; }
+.manor {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: none;
+}
+.manor:hover { color: var(--ink); }
 .top-actions { display: flex; gap: 10px; align-items: center; }
 .streak, .lang, .fine, .eyebrow, .meta { color: var(--muted); }
 .lang { border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; background: rgba(7, 16, 24, 0.55); }
@@ -240,6 +248,7 @@ li + li { margin-top: 8px; }
   .clue-body .fine,
   .fine { font-size: 0.78rem; }
   .brand { font-size: 1.05rem; }
+  .manor { font-size: 0.92rem; }
   .reveal {
     width: 100%;
     max-width: none;

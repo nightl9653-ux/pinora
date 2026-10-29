@@ -25,6 +25,14 @@ class StageBoundary extends Component<{ children: ReactNode }, { failed: boolean
   }
 }
 
+const MANOR_URL = "https://dressup.919145.xyz";
+
+function manorLabel(locale: PickerLocale): string {
+  if (locale === "en") return "Manor";
+  if (locale === "ko") return "저택연회";
+  return "宅宴";
+}
+
 function useLocation() {
   const [href, setHref] = useState(() => window.location.pathname + window.location.search);
   useEffect(() => {
@@ -229,9 +237,14 @@ export default function App() {
   return (
     <div className={playSplit ? "app play-split" : "app"}>
       <header className="top">
-        <button className="brand" onClick={() => route.go("/")}>
-          Pinora
-        </button>
+        <div className="top-brand">
+          <button className="brand" onClick={() => route.go("/")}>
+            Pinora
+          </button>
+          <a className="manor" href={MANOR_URL} target="_blank" rel="noopener noreferrer">
+            {manorLabel(locale)}
+          </a>
+        </div>
         <div className="top-actions">
           {streak > 0 && <span className="streak">{fill(copy.streak, { n: streak })}</span>}
           <LangSelect locale={locale} label={copy.language} onChange={setLocale} />
