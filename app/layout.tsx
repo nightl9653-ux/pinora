@@ -1,6 +1,45 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import "./globals.css";
+
+const crashWatch = `
+(function () {
+  var text = "";
+  function paint() {
+    if (!text || !document.body || document.getElementById("pinora-crash")) return;
+    var box = document.createElement("pre");
+    box.id = "pinora-crash";
+    box.style.cssText = "position:fixed;left:12px;right:12px;bottom:12px;max-height:46vh;overflow:auto;z-index:99999;margin:0;padding:12px 14px;background:#241910;color:#f4efe4;font:13px/1.45 ui-sans-serif,sans-serif;white-space:pre-wrap";
+    box.textContent = text;
+    document.body.appendChild(box);
+  }
+  function note(message, stack) {
+    var next = String(message || "");
+    if (stack) next += "\\n" + stack;
+    if (!next.trim()) return;
+    text = next;
+    paint();
+  }
+  window.addEventListener("error", function (event) {
+    note(event.message, event.error && event.error.stack);
+  });
+  window.addEventListener("unhandledrejection", function (event) {
+    var reason = event.reason;
+    note(reason && reason.message ? reason.message : reason, reason && reason.stack);
+  });
+  function arm() {
+    if (!document.body || document.body.dataset.pinoraWatch) return;
+    document.body.dataset.pinoraWatch = "1";
+    new MutationObserver(paint).observe(document.body, { childList: true });
+  }
+  new MutationObserver(function () {
+    arm();
+    paint();
+  }).observe(document.documentElement, { childList: true });
+  arm();
+})();
+`;
 
 export const metadata: Metadata = {
   title: "Pinora · Dayfive",
@@ -24,7 +63,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Script id="pinora-crash-watch" strategy="beforeInteractive">
+          {crashWatch}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

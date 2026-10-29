@@ -1,13 +1,29 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Component, useEffect, useMemo, useState, type ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { fetchBoard, fetchPuzzle, saveName, sendGuess, type Board, type Puzzle } from "./api";
 import { addDays } from "./game/dates";
 import { RTL, type PickerLocale } from "./game/locale";
 import { emojiFor } from "./game/tier";
 import { copyFor, detectLocale, fill, formatDay, LANGS, type Copy } from "./i18n";
 import { currentStreak, rememberStreak } from "./streak";
-import { GlobeView, type Arc, type Marker } from "./ui/GlobeView";
+import type { Arc, Marker } from "./ui/GlobeView";
+
+const GlobeView = dynamic(() => import("./ui/GlobeView").then((mod) => mod.GlobeView), { ssr: false });
+
+class StageBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    if (this.state.failed) return <div className="globe" />;
+    return this.props.children;
+  }
+}
 
 function useLocation() {
   const [href, setHref] = useState(() => window.location.pathname + window.location.search);
@@ -59,7 +75,11 @@ function LangSelect({
       value={locale}
       onChange={(event) => {
         const next = event.target.value as PickerLocale;
-        localStorage.setItem("pinora-lang", next);
+        try {
+          localStorage.setItem("pinora-lang", next);
+        } catch {
+          /* private mode */
+        }
         onChange(next);
       }}
     >
@@ -282,14 +302,16 @@ export default function App() {
       )}
 
       <div className="stage">
-        <GlobeView
-          interactive={playing && !sheet && !pending}
-          rotate={route.path === "/"}
-          markers={route.path === "/play" || route.path === "/results" ? markers : []}
-          arcs={route.path === "/play" || route.path === "/results" ? arcs : []}
-          focus={route.path === "/play" ? focus : null}
-          onPick={(lat, lng) => void onPick(lat, lng)}
-        />
+        <StageBoundary>
+          <GlobeView
+            interactive={playing && !sheet && !pending}
+            rotate={route.path === "/"}
+            markers={route.path === "/play" || route.path === "/results" ? markers : []}
+            arcs={route.path === "/play" || route.path === "/results" ? arcs : []}
+            focus={route.path === "/play" ? focus : null}
+            onPick={(lat, lng) => void onPick(lat, lng)}
+          />
+        </StageBoundary>
       </div>
 
       {route.path === "/" && (

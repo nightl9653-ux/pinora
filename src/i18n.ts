@@ -782,22 +782,32 @@ const PREFIX: { prefix: string; locale: PickerLocale }[] = [
 
 /** Only returns languages that appear in the picker. */
 export function detectLocale(): PickerLocale {
-  const saved = localStorage.getItem("pinora-lang");
-  if (saved && isPickerLocale(saved)) return saved;
-  const list = navigator.languages.length > 0 ? navigator.languages : [navigator.language];
-  for (const raw of list) {
-    const tag = raw.toLowerCase().replace("_", "-");
-    for (const item of PREFIX) {
-      if (tag === item.prefix || tag.startsWith(`${item.prefix}-`)) return item.locale;
+  try {
+    const saved = localStorage.getItem("pinora-lang");
+    if (saved && isPickerLocale(saved)) return saved;
+    const list = navigator.languages.length > 0 ? navigator.languages : [navigator.language];
+    for (const raw of list) {
+      const tag = raw.toLowerCase().replace("_", "-");
+      for (const item of PREFIX) {
+        if (tag === item.prefix || tag.startsWith(`${item.prefix}-`)) return item.locale;
+      }
     }
+  } catch {
+    /* private mode or a blocked storage API */
   }
   return "en";
 }
 
 export function formatDay(locale: Locale, iso: string): string {
-  return new Intl.DateTimeFormat(intlTag(locale), {
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(`${iso}T00:00:00Z`));
+  const date = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return iso;
+  try {
+    return new Intl.DateTimeFormat(intlTag(locale), {
+      month: "short",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  } catch {
+    return iso;
+  }
 }
