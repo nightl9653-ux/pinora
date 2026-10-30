@@ -273,9 +273,9 @@ export const spellFacts: Fact[] = [
     "spell-cusco",
     ["three leaves tucked into a boundary stone", "界石缝里的三片叶子", "界石縫裡的三片葉子"],
     [
-      "A herder tucked three leaves into the crack of a boundary stone and said the sheep would not cross that ridge. His younger brother was hungry and pulled two out to chew. By evening the flock stood on the far side of the ridge. One leaf was left in the crack, and it was covered with frost.",
-      "牧童往界石缝里塞了三片叶子，说羊就不会翻过那道梁。他弟弟饿了，抽走两片嚼了。傍晚羊群站在梁的另一边，石缝里只剩一片，还结着霜。",
-      "牧童往界石縫裡塞了三片葉子，說羊就不會翻過那道梁。他弟弟餓了，抽走兩片嚼了。傍晚羊群站在梁的另一邊，石縫裡只剩一片，還結著霜。",
+      "A herder tucked three leaves into the crack of a boundary stone and said the flock should stay on this side of the ridge. His younger brother was hungry and pulled two out to chew. By evening the flock stood on the far side of the ridge. One leaf was left in the crack, and it was covered with frost.",
+      "牧童往界石缝里塞了三片叶子，说羊群就留在梁这边，别翻过去。他弟弟饿了，抽走两片嚼了。傍晚羊群站在梁的另一边，石缝里只剩一片，还结着霜。",
+      "牧童往界石縫裡塞了三片葉子，說羊群就留在梁這邊，別翻過去。他弟弟餓了，抽走兩片嚼了。傍晚羊群站在梁的另一邊，石縫裡只剩一片，還結著霜。",
     ],
   ),
   tale(
@@ -285,9 +285,9 @@ export const spellFacts: Fact[] = [
     "spell-kyoto",
     ["a pinch of incense ash by the stove", "灶台边的一撮香灰", "灶臺邊的一撮香灰"],
     [
-      "The landlord left a pinch of incense ash beside the stove and said the fire would not go out with a tenant. The new tenant swept the ash into the sink. That night every stove in the building was lit, and not one pot was hot.",
-      "房东在灶台边留了一小撮香灰，说房客走的时候灶火不会跟着熄。新房客扫地，把灰扫进了水槽。当晚整栋楼的灶都点着，却没有一口锅是热的。",
-      "房東在灶臺邊留了一小撮香灰，說房客走的時候灶火不會跟著熄。新房客掃地，把灰掃進了水槽。當晚整棟樓的灶都點著，卻沒有一口鍋是熱的。",
+      "The landlord left a pinch of incense ash beside the stove and said the kitchen fire should keep warming food for whoever lived there. The new tenant swept the ash into the sink. That night every stove in the building was lit, and not one pot was hot.",
+      "房东在灶台边留了一小撮香灰，说这灶火是留给屋里人热饭用的，别让它空烧。新房客扫地，把灰扫进了水槽。当晚整栋楼的灶都点着，却没有一口锅是热的。",
+      "房東在灶臺邊留了一小撮香灰，說這灶火是留給屋裡人熱飯用的，別讓它空燒。新房客掃地，把灰掃進了水槽。當晚整棟樓的灶都點著，卻沒有一口鍋是熱的。",
     ],
   ),
   tale(
@@ -297,9 +297,9 @@ export const spellFacts: Fact[] = [
     "spell-palermo",
     ["a strip of lemon peel on the windowsill", "窗台上的柠檬皮", "窗臺上的檸檬皮"],
     [
-      "A grandmother left a strip of lemon peel on the windowsill and said the sea wind would not carry the family's words into other houses. Her grandson soaked the peel and drank the water. The next day the sill was crusted with white salt, and people in the street repeated yesterday's quarrel word for word.",
-      "祖母把一块柠檬皮晾在窗台，说海风就不会把家里的话吹进别人家里。孙子拿它泡了水喝。第二天窗台结了一层白盐，街上的人把她家昨天的争吵原句说了一遍。",
-      "祖母把一塊檸檬皮晾在窗臺，說海風就不會把家裡的話吹進別人家裡。孫子拿它泡了水喝。第二天窗臺結了一層白鹽，街上的人把她家昨天的爭吵原句說了一遍。",
+      "A grandmother left a strip of lemon peel on the windowsill and said family talk should stay indoors—the sea wind must not carry it into other houses. Her grandson soaked the peel and drank the water. The next day the sill was crusted with white salt, and people in the street repeated yesterday's quarrel word for word.",
+      "祖母把一块柠檬皮晾在窗台，说家里的话留在自家——别让海风吹进别人家里。孙子拿它泡了水喝。第二天窗台结了一层白盐，街上的人把她家昨天的争吵原句说了一遍。",
+      "祖母把一塊檸檬皮晾在窗臺，說家裡的話留在自家——別讓海風吹進別人家裡。孫子拿它泡了水喝。第二天窗臺結了一層白鹽，街上的人把她家昨天的爭吵原句說了一遍。",
     ],
   ),
   tale(
@@ -309,9 +309,9 @@ export const spellFacts: Fact[] = [
     "spell-jeonju",
     ["a red thread wound around the gatepost", "门柱上的红线", "門柱上的紅線"],
     [
-      "Grandmother wound a red thread around the gatepost and said anyone looking for a bed at night would find the empty room on their own. Her granddaughter thought it looked ugly, cut it off, and tied it into her braid. That night the empty room's door opened by itself. The thread was knotted around the courtyard tree, and nobody could undo it.",
-      "奶奶在门柱上绕了一圈红线，说晚上来借宿的人会自己找到空屋。孙女觉得难看，剪下来绑了辫子。夜里空屋的门自己开了，红线却系在院里那棵树上，怎么解都打成结。",
-      "奶奶在門柱上繞了一圈紅線，說晚上來借宿的人會自己找到空屋。孫女覺得難看，剪下來綁了辮子。夜裡空屋的門自己開了，紅線卻繫在院裡那棵樹上，怎麼解都打成結。",
+      "Grandmother wound a red thread around the gatepost and said anyone looking for a bed at night would find the empty room on their own. Her granddaughter thought it looked ugly, cut it off, and tied it into her braid. That night the empty room's door opened by itself. The braid was bare; the thread was knotted around the courtyard tree, and nobody could undo it.",
+      "奶奶在门柱上绕了一圈红线，说晚上来借宿的人会自己找到空屋。孙女觉得难看，剪下来绑了辫子。夜里空屋的门自己开了；辫子上的线不见了，红线只系在院里那棵树上，怎么解都打成结。",
+      "奶奶在門柱上繞了一圈紅線，說晚上來借宿的人會自己找到空屋。孫女覺得難看，剪下來綁了辮子。夜裡空屋的門自己開了；辮子上的線不見了，紅線只繫在院裡那棵樹上，怎麼解都打成結。",
     ],
   ),
   tale(
@@ -321,9 +321,9 @@ export const spellFacts: Fact[] = [
     "spell-salvador",
     ["a white cloth over the drum", "鼓面上的白布", "鼓面上的白布"],
     [
-      "A drummer covered the drum with a white cloth and said the rhythm would not follow anyone home after the music stopped. The student used the cloth to wipe his sweat. After the crowd left, cups along the street clicked in the same beat. The cloth was back on the drum, one corner wet, and the student's hands kept tapping that beat until morning.",
-      "鼓手在鼓面盖了一块白布，说散场后节奏不会跟到别人家里。学徒把布拿去擦汗。散场后整条街的杯子跟着同一个拍子响；白布自己回到鼓上，湿了一角，学徒的手却一直敲到天亮。",
-      "鼓手在鼓面蓋了一塊白布，說散場後節奏不會跟到別人家裡。學徒把布拿去擦汗。散場後整條街的杯子跟著同一個拍子響；白布自己回到鼓上，濕了一角，學徒的手卻一直敲到天亮。",
+      "A drummer covered the drum with a white cloth and said after the show the beat should rest with the drum, not follow anyone home. The student used the cloth to wipe his sweat. After the crowd left, cups along the street clicked in the same beat. The cloth was back on the drum, one corner wet, and the student's hands kept tapping that beat until morning.",
+      "鼓手在鼓面盖了一块白布，说散场后节奏留在鼓上，别跟到别人家里。学徒把布拿去擦汗。散场后整条街的杯子跟着同一个拍子响；白布自己回到鼓上，湿了一角，学徒的手却一直敲到天亮。",
+      "鼓手在鼓面蓋了一塊白布，說散場後節奏留在鼓上，別跟到別人家裡。學徒把布拿去擦汗。散場後整條街的杯子跟著同一個拍子響；白布自己回到鼓上，濕了一角，學徒的手卻一直敲到天亮。",
     ],
   ),
   tale(
@@ -345,9 +345,9 @@ export const spellFacts: Fact[] = [
     "spell-goreme",
     ["a blue bead on the lintel", "门梁上的蓝珠", "門樑上的藍珠"],
     [
-      "A stonemason nailed a blue bead to the lintel and said the night wind would not get into the cave room. A guest thought the bead looked old and swapped it for a brighter one from his pocket. At dawn someone else's sand was piled in the doorway, and the bright bead had split in two.",
-      "石匠在门梁上钉了一颗蓝珠，说夜里的风不会钻进窑洞。客人嫌它旧，换成自己口袋里一颗更亮的。天亮时窑洞门口堆着别人家的沙子，那颗亮珠裂成了两半。",
-      "石匠在門樑上釘了一顆藍珠，說夜裡的風不會鑽進窯洞。客人嫌它舊，換成自己口袋裡一顆更亮的。天亮時窯洞門口堆著別人家的沙子，那顆亮珠裂成了兩半。",
+      "A stonemason nailed a blue bead to the lintel and said the cave room should stay still at night—keep the wind outside. A guest thought the bead looked old and swapped it for a brighter one from his pocket. At dawn someone else's sand was piled in the doorway, and the bright bead had split in two.",
+      "石匠在门梁上钉了一颗蓝珠，说夜里窑洞要安静，风留在门外。客人嫌它旧，换成自己口袋里一颗更亮的。天亮时窑洞门口堆着别人家的沙子，那颗亮珠裂成了两半。",
+      "石匠在門樑上釘了一顆藍珠，說夜裡窯洞要安靜，風留在門外。客人嫌它舊，換成自己口袋裡一顆更亮的。天亮時窯洞門口堆著別人家的沙子，那顆亮珠裂成了兩半。",
     ],
   ),
   tale(
@@ -357,9 +357,9 @@ export const spellFacts: Fact[] = [
     "spell-luxor",
     ["river water left in a cracked cup", "裂杯里留下的一口河水", "裂杯裡留下的一口河水"],
     [
-      "A ferryman left a mouthful of river water in a cracked cup and said the river would bring back the fare he was owed. His son poured the water back into the river. The next day the cup was full. A stranger's fare sat at the bottom, and no amount of tipping would get it out.",
-      "摆渡人在裂了缝的杯子里留了一口水，说河会把欠的渡钱送回来。他儿子把水倒进了河里。第二天杯子是满的，杯底却沉着一枚别人的渡钱，怎么倒都倒不出来。",
-      "擺渡人在裂了縫的杯子裡留了一口水，說河會把欠的渡錢送回來。他兒子把水倒進了河裡。第二天杯子是滿的，杯底卻沉著一枚別人的渡錢，怎麼倒都倒不出來。",
+      "A ferryman left a mouthful of river water in a cracked cup and said unpaid fares should come back to him by the water. His son poured the water back into the river. The next day the cup was full. A stranger's fare sat at the bottom, and no amount of tipping would get it out.",
+      "摆渡人在裂了缝的杯子里留了一口水，说欠的渡钱会顺着河回到他手里。他儿子把水倒进了河里。第二天杯子是满的，杯底却沉着一枚别人的渡钱，怎么倒都倒不出来。",
+      "擺渡人在裂了縫的杯子裡留了一口水，說欠的渡錢會順著河回到他手裡。他兒子把水倒進了河裡。第二天杯子是滿的，杯底卻沉著一枚別人的渡錢，怎麼倒都倒不出來。",
     ],
   ),
   tale(
@@ -369,9 +369,9 @@ export const spellFacts: Fact[] = [
     "spell-oaxaca",
     ["a yellow flower at the door", "门口的一朵黄花", "門口的一朵黃花"],
     [
-      "A woman set a yellow flower at the door and said the person who had left first would still come sit down before supper. Her husband put the flower in a vase. At supper a chair pulled itself out. The flower had fallen on the threshold, petals facing the street.",
-      "女人在门口放了一朵黄花，说先走的人还会在晚饭前来坐一会儿。她丈夫把花插进了瓶里。晚饭时椅子自己拉了出来，花却落在门槛上，花瓣朝外。",
-      "女人在門口放了一朵黃花，說先走的人還會在晚飯前來坐一會兒。她丈夫把花插進了瓶裡。晚飯時椅子自己拉了出來，花卻落在門檻上，花瓣朝外。",
+      "A woman set a yellow flower at the door and said the one who had gone ahead would still be welcome to sit a while before supper. Her husband put the flower in a vase. At supper a chair pulled itself out. The vase was empty; the flower lay on the threshold, petals facing the street.",
+      "女人在门口放了一朵黄花，说先离去的亲人晚饭前仍可来坐一会儿，家里留着位子。她丈夫把花插进了瓶里。晚饭时椅子自己拉了出来；瓶里空了，花只落在门槛上，花瓣朝外。",
+      "女人在門口放了一朵黃花，說先離去的親人晚飯前仍可來坐一會兒，家裡留著位子。她丈夫把花插進了瓶裡。晚飯時椅子自己拉了出來；瓶裡空了，花只落在門檻上，花瓣朝外。",
     ],
   ),
   tale(
@@ -381,7 +381,7 @@ export const spellFacts: Fact[] = [
     "spell-galway",
     ["a coin pressed into the well rim", "井沿上按着的一枚硬币", "井沿上按著的一枚硬幣"],
     [
-      "A boy pressed a coin into the rim of the well and said a lost sheep would follow the sound of the water home. His sister pried the coin out and bought candy. That night the rim was dry. The sheep stood beside the candy wrapper, and the coin was shining at the bottom of the well.",
+      "A boy pressed a coin on the well rim and said lost sheep should follow the water sound home. His sister pried it off for candy. That night the rim was dry; the sheep stood by candy wrappers, and the coin shone at the well bottom.",
       "男孩把一枚硬币按在井沿，说迷路的羊会顺着水声回来。他妹妹把硬币抠下来买了糖。夜里井沿是干的，羊站在糖纸旁边，硬币却在井底发亮。",
       "男孩把一枚硬幣按在井沿，說迷路的羊會順著水聲回來。他妹妹把硬幣摳下來買了糖。夜裡井沿是乾的，羊站在糖紙旁邊，硬幣卻在井底發亮。",
     ],
@@ -393,7 +393,7 @@ export const spellFacts: Fact[] = [
     "spell-hue",
     ["a paper horse under the bridge", "桥下的纸马", "橋下的紙馬"],
     [
-      "A boatman wedged a paper horse under the bridge and said that when the water rose, the boat would come back to the pier on its own. A child took the horse as a toy and ran a lap in the rain. After the water fell, the paper horse was stuck to the pier. The people were on the other bank, and the rope was dry.",
+      "A boatman pressed a paper horse under the bridge and said the boat should find the pier when water rose. A child took it as a toy and ran through rain. After the water fell the horse stuck to the pier; the people from the boat stood on the far bank, and the rope was dry.",
       "船夫在桥下压了一只纸马，说涨水的时候船会自己靠回桥墩。孩子把纸马拿去当玩具，在雨里跑了一圈。水退后纸马贴在桥墩上，船上的人却在对岸，绳子是干的。",
       "船夫在橋下壓了一隻紙馬，說漲水的時候船會自己靠回橋墩。孩子把紙馬拿去當玩具，在雨裡跑了一圈。水退後紙馬貼在橋墩上，船上的人卻在對岸，繩子是乾的。",
     ],
@@ -405,9 +405,9 @@ export const spellFacts: Fact[] = [
     "spell-irkutsk",
     ["a cloth tied to a birch", "白桦上系着的布条", "白樺上繫著的布條"],
     [
-      "A hunter tied a strip of cloth to a birch and said the fog on the lake would not follow him into the trees. His companion thought the cloth was worn out and replaced it with his own red scarf. The next day the fog stopped at the edge of the woods. The scarf was stiff with frost, and the knot on the birch would not come undone.",
-      "猎人在白桦上系了一条布，说湖上的雾不会跟他进林子。同伴觉得布旧了，换成自己的红围巾。第二天雾停在林子边上，红围巾结着霜，白桦上的结却怎么也解不开。",
-      "獵人在白樺上繫了一條布，說湖上的霧不會跟他進林子。同伴覺得布舊了，換成自己的紅圍巾。第二天霧停在林子邊上，紅圍巾結著霜，白樺上的結卻怎麼也解不開。",
+      "A hunter tied a cloth on a birch and said lake fog should stay at the shore, not follow him into the woods. A companion swapped it for a red scarf. The next day fog stopped at the tree line; the scarf was frosted, and the knot on the birch would not come undone.",
+      "猎人在白桦上系了一条布，说湖上的雾停在岸边，别跟他进林子。同伴觉得布旧了，换成自己的红围巾。第二天雾停在林子边上，红围巾结着霜，白桦上的结却怎么也解不开。",
+      "獵人在白樺上繫了一條布，說湖上的霧停在岸邊，別跟他進林子。同伴覺得布舊了，換成自己的紅圍巾。第二天霧停在林子邊上，紅圍巾結著霜，白樺上的結卻怎麼也解不開。",
     ],
   ),
   tale(
@@ -417,9 +417,9 @@ export const spellFacts: Fact[] = [
     "spell-varanasi",
     ["a small lamp set on the water", "放上水面的一盏灯", "放上水面的一盞燈"],
     [
-      "A woman set a small lamp on the water and said the words she had not finished would float away with it. Her son was afraid the lamp would die, so he fished it out and set it on the step. The lamp stayed lit. All night the water under the steps would not move downstream, and every time she tried to finish the sentence, her throat closed.",
-      "女人把一盏小灯放上水面，说没说完的话会随灯漂走。她儿子怕灯灭，捞回来搁在台阶上。灯还亮着，台阶下的水却一夜不往下游流；她一想把那句话说完，嗓子就发紧，怎么也说不出口。",
-      "女人把一盞小燈放上水面，說沒說完的話會隨燈漂走。她兒子怕燈滅，撈回來擱在臺階上。燈還亮著，臺階下的水卻一夜不往下游流；她一想把那句話說完，嗓子就發緊，怎麼也說不出口。",
+      "A woman set a small lamp on the water and said unfinished words should float away with it, so the house can rest. Her son feared the flame and brought it back to the step. The lamp still burned, yet the water below would not flow downstream all night; when she tried to finish the sentence, her throat tightened and no sound came.",
+      "女人把一盏小灯放上水面，说没说完的话随灯漂走，家里才能歇下来。她儿子怕灯灭，捞回来搁在台阶上。灯还亮着，台阶下的水却一夜不往下游流；她一想把那句话说完，嗓子就发紧，怎么也说不出口。",
+      "女人把一盞小燈放上水面，說沒說完的話隨燈漂走，家裡才能歇下來。她兒子怕燈滅，撈回來擱在臺階上。燈還亮著，臺階下的水卻一夜不往下游流；她一想把那句話說完，嗓子就發緊，怎麼也說不出口。",
     ],
   ),
   tale(
@@ -429,7 +429,7 @@ export const spellFacts: Fact[] = [
     "spell-ubud",
     ["a flower left at the door at dawn", "清晨留在门口的一朵花", "清晨留在門口的一朵花"],
     [
-      "A girl left a flower at the door every dawn and said that day's guests would bring food with them. Her brother picked the flower and gave it to a classmate. At noon the doorway was piled with fruit nobody claimed. The flower had wilted in the classmate's bag, and not one piece of fruit could be carried off.",
+      "A girl left a flower at the door each dawn and said that day's guests would bring food themselves. A brother took the flower for a classmate. At noon unclaimed fruit piled at the door; the flower wilted in the classmate's bag, and none of the fruit could be carried away.",
       "女孩每天清晨在门口放一朵花，说这一天的客人会自己带吃的来。弟弟把花摘去送给同学。中午门口堆着没人认领的果子，花却在同学的书包里蔫了，果子一个也带不走。",
       "女孩每天清晨在門口放一朵花，說這一天的客人會自己帶吃的來。弟弟把花摘去送給同學。中午門口堆著沒人認領的果子，花卻在同學的書包裡蔫了，果子一個也帶不走。",
     ],
@@ -441,7 +441,7 @@ export const spellFacts: Fact[] = [
     "spell-rotorua",
     ["a hot stone at the fork in the path", "岔路口的一块热石头", "岔路口的一塊熱石頭"],
     [
-      "A guide set a hot stone at a fork and said anyone who took the wrong path would turn back on their own. A visitor found it too hot to touch and kicked it into the grass. When he looked back, all three paths were breathing white steam. The hot stone was beside his shoe, and the grass was dry.",
+      "A guide set a warm stone at the fork and said walkers who take the wrong path should turn back on their own. A tourist kicked it into the grass as too hot. On the return all three forks steamed; the stone lay by the tourist's shoe, and the grass was dry.",
       "向导在岔路口放了一块热石头，说走错的人会自己退回来。游客觉得烫手，把它踢进了草里。回头时三条岔路都冒着白气，热石头却在他鞋边，草是干的。",
       "嚮導在岔路口放了一塊熱石頭，說走錯的人會自己退回來。遊客覺得燙手，把它踢進了草裡。回頭時三條岔路都冒著白氣，熱石頭卻在他鞋邊，草是乾的。",
     ],
@@ -453,9 +453,9 @@ export const spellFacts: Fact[] = [
     "spell-krakow",
     ["half a loaf left on the windowsill", "窗台上的半块面包", "窗臺上的半塊麵包"],
     [
-      "A baker left half a loaf on the windowsill and said anyone who knocked at night would take one bite and leave. The apprentice put the bread in the cupboard. In the night the cupboard stood open. One bite was gone from the loaf, and a wet handprint sat on the sill with nobody attached to it.",
-      "面包师把半块面包留在窗台，说夜里敲门的人只吃这一口就走。学徒把面包收进了柜子。夜里柜子自己开着，面包少了一口；窗台上留着一个湿手印，却看不见人。",
-      "麵包師把半塊麵包留在窗臺，說夜裡敲門的人只吃這一口就走。學徒把麵包收進了櫃子。夜裡櫃子自己開著，麵包少了一口；窗臺上留著一個濕手印，卻看不見人。",
+      "A baker left half a loaf on the sill and said a night knock should take only this share and leave the house in peace. An apprentice locked the loaf in a cupboard. At night the cupboard stood open and one bite was gone; a wet handprint marked the sill, though no one was in sight.",
+      "面包师把半块面包留在窗台，说夜里敲门讨食的人只取这一口，吃完就走，别惊扰全家。学徒把面包收进了柜子。夜里柜子自己开着，面包少了一口；窗台上留着一个湿手印，却看不见人。",
+      "麵包師把半塊麵包留在窗臺，說夜裡敲門討食的人只取這一口，吃完就走，別驚擾全家。學徒把麵包收進了櫃子。夜裡櫃子自己開著，麵包少了一口；窗臺上留著一個濕手印，卻看不見人。",
     ],
   ),
   tale(
@@ -465,7 +465,7 @@ export const spellFacts: Fact[] = [
     "spell-accra",
     ["a drop of palm oil on the threshold", "门槛上的一滴棕油", "門檻上的一滴棕油"],
     [
-      "A fisherwoman put a drop of palm oil on the threshold and said the person who had gone to sea would come back on that same tide. She wiped the oil onto the net rope, wanting the net to share the luck. The tide arrived on time. The person was standing on the shore, and the net was wet on the inside of the threshold.",
+      "A fisherwoman dotted palm oil on the threshold and said those at sea should return on the same day's tide. She wiped the oil onto the net rope for luck. The tide came on time and the people stood ashore, yet the net lay wet inside the threshold.",
       "渔妇在门槛上点了一滴棕油，说出海的人会在同一天的潮水里回来。她把油擦到了网绳上，想让网也沾点光。潮水准时到了，人站在岸上，网却湿在门槛里面。",
       "漁婦在門檻上點了一滴棕油，說出海的人會在同一天的潮水裡回來。她把油擦到了網繩上，想讓網也沾點光。潮水準時到了，人站在岸上，網卻濕在門檻裡面。",
     ],
